@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="brython.js"></script>
+    <script src="brython_stdlib.js"></script>
+    <link rel="stylesheet" href="estilo.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=IBM+Plex+Sans&family=Permanent+Marker&display=swap" rel="stylesheet">
+    <title>Calculat</title>
+    
+</head>
+<body onload=brython()>
+    
+   <h1>calculat </h1>
+
+    <div id="sfc8abtf2a76z36jggbuewzg2y4fga53g6b"></div>
+    <script type="text/javascript" src="https://counter1.stat.ovh/private/counter.js?c=8abtf2a76z36jggbuewzg2y4fga53g6b&down=async" async></script>
+    <noscript><a href="https://www.contadorvisitasgratis.com" title="contador para pagina web"><img src="https://counter1.stat.ovh/private/contadorvisitasgratis.php?c=8abtf2a76z36jggbuewzg2y4fga53g6b" border="0" title="contador para pagina web" alt="contador para pagina web"></a></noscript>
+    
+    
+    <input type="button"  class='boton' value="limpiar" onClick="location.reload();" >
+    <input type="button" class="boton" id="sumas" value=" Suma ">
+    <div class= "lorem" id="sus"></div>
+    <script type="text/python">
+        from browser import document, prompt, html
+
+        def sumar(evento):
+            
+            print("cantidad de numeros ha operar")
+            n = int(input("cantidad de numeros ha operar = "))
+            i=0
+            mas=0
+            for i in range(0, n):
+                sum=int(input("valor ha operar="))
+                mas=mas+sum
+                print("el resultado de la suma es=" + str(mas) )
+            document["sus"] <= html.P(F"el resultado de la suma es = {mas}")
+        document['sumas'].bind('click', sumar)
+        
+   
+    </script>
+    <input type="button"  class='boton' value="limpiar" onClick="location.reload();" >
+    <input type="button" class="boton" id="restas" value="Resta ">
+    <div class= "lorem" id="div2"> </div>
+
+        
+    <script type="text/python">
+        from browser import document, prompt, html
+
+        def resta(evento):
+            print("cantidad de numeros ha operar")
+            n = int(input("cantidad de numeros ha operar = "))
+            i = 0
+            mens = 0
+            for i in range(0, n):
+                rest=int(input("valor ha operar="))
+                if rest < 0:
+                    mens=rest+mens 
+                else:
+                    if mens == 0:
+                        mens=mens+rest
+                    elif mens < 0:
+                        mens=mens-(-rest)
+                    else:
+                        mens=mens-rest
+            print("el resultado de la resta es=" + str(mens))
+            document["div2"] <= html.P(F"el resultadode la resta es = {mens}")
+        document['restas'].bind('click', resta)
+        
+    </script>
+    <input type="button"  class='boton' value="limpiar" onClick="location.reload();" >
+    <input type="button" class="boton" id="divisiones" value="Division ">
+    <div class= "lorem" id="div3"> </div>
+    
+    <script type="text/python">
+        from browser import document, prompt, html
+        def division(evento):
+            v1=int(input("dividendo="))
+            v2=int(input("divisor="))
+            if v2 ==0:
+                print("este valor no se pude ")
+                v2=int(input("divisor="))
+                co=v1/v2
+                print("el resultado de la diivision=" + str(co))
+            else:
+                co=v1/v2
+                print("el resultado de la diivision=" + str(co))
+                document["div3"] <= html.P(F"el resultado de la division es = {co}")
+        document['divisiones'].bind('click', division)
+        
+    </script>
+    <input type="button"  class='boton' value="limpiar" onClick="location.reload();" >
+    <input type="button" class="boton" id="multiplicaciones" value="Multiplicacion ">
+    <div class= "lorem" id="div4"> </div>
+    <script type="text/python">
+        from browser import document, prompt, html
+        def multiplicacion(evento):
+            print("cantidad de numeros ha operar")
+            n = int(input("cantidad de numeros ha operar = "))
+            i=0
+            mul=1
+            for i in range(0, n):
+                multi=int(input("valor ha operar="))
+                mul=mul*multi
+            print("el resultado de la multiplicacion es=" + str(mul))
+            document["div4"] <= html.P(F"el resultado de la multiplicacion es = {mul}")
+        document['multiplicaciones'].bind('click', multiplicacion)
+        
+    </script>
+    <input type="button"  class='boton' value="limpiar" onClick="location.reload();" >
+    <input type="button" class="boton" id="planeta" value="Saber edad en otros planetas">
+    <div class= "lorem" id="div5"> </div>
+    <script type="text/python">
+        from browser import document, prompt, html
+        def planetas(evento):
+            print("ingrese su edad actualmente")
+            edad=int(input("edad= "))
+            diasV=edad*365
+            marte=diasV/687
+            print ("la edad que usted tendria si viviera en marte seria = " + str(int(marte)) + " años aproximadamente")
+            diasV=edad*365
+            mercurio=diasV/88
+            print ("la edad que usted tendria si viviera en mercurio seria = " + str(int(mercurio)) + " años aproximadamente")
+            diasV=edad*365
+            saturno=diasV/10760
+            print ("la edad que usted tendria si viviera en saturno seria = " + str(saturno) + " años aproximadamente")
+            diasV=edad*365
+            jupiter=diasV/4332
+            print ("la edad que usted tendria si viviera en jupiter seria = " + str(int(jupiter)) + " año aproximadamente")
+            diasV=edad*365
+            venus=diasV/225
+            print ("la edad que usted tendria si viviera en venus seria = " + str(int(venus)) + " años aproximadamente")
+            diasV=edad*365
+            urano=diasV/30681
+            print ("la edad que usted tendria si viviera en urano seria = " + str(urano) + " años aproximadamente")
+            diasV=edad*365
+            neptuno=diasV/60190
+            print ("la edad que usted tendria si viviera en neptuno seria = " + str(neptuno) + " años aproximadamente")
+            diasV=edad*365
+            pluton=diasV/90798
+            print ("la edad que usted tendria si viviera en pluton seria = " + str(pluton) + " años aproximadamente")
+            document["div5"] <= html.P(F"la edad que usted tendria en marte es = {int(marte)}" + ' aproximadamente ')
+            document["div5"] <= html.P(F"la edad que usted tendria en mercurio es = {int(mercurio)}" + ' aproximadamente ')
+            document["div5"] <= html.P(F"la edad que usted tendria en saturno es = {float (saturno)}" + ' aproximadamente ')
+            document["div5"] <= html.P(F"la edad que usted tendria en jupiter es = {int(jupiter)}" + ' aproximadamente ')
+            document["div5"] <= html.P(F"la edad que usted tendria en venus es = {int(venus)}" + ' aproximadamente ')
+            document["div5"] <= html.P(F"la edad que usted tendria en urano es = {int(urano)}" + ' aproximadamente ')
+            document["div5"] <= html.P(F"la edad que usted tendria en neptuno es = {int(neptuno)}" + ' aproximadamente ')
+            document["div5"] <= html.P(F"la edad que usted tendria en pluton es = {int(pluton)}" + ' aproximadamente ')
+            
+        document['planeta'].bind('click', planetas)
+        
+    </script>
+    <input type="button"  class='boton' value="limpiar" onClick="location.reload();" >
+    <input type="button" class="boton" id="guia" value="Imagen guia para colocar valores ">
+    <input type="button" class="boton" id="inicio" value=" Iniciar solucion del triangulo rectangulo ">
+    <div class= "lorem" id="div7"> </div>
+    <div class= "lorem" id="div6"> </div>
+    <script type="text/python">
+        from browser import document, alert, html, prompt, bind, timer
+        def insertar(evento):
+            document['div7'] <= html.P('Cuando se le pregunte reponda (si) o (no) ')
+            document['div7'] <= html.P('Inserte el valor correspondiente cuando se le pregunte ')
+            document['div7'] <= html.P('Esta funcion solo sirve para resolver angulos de (30) (45) (60) ')
+            img = 'imagen/t.png'
+            document['div7'] <= html.IMG(src = img, id='inicio')
+        document['guia'].bind('click', insertar)
+    </script>
+    <script type="text/python">
+        from browser import document, prompt, html
+        
+       
+        def lol(evento):
+            
+
+
+            print('los angulos solo pueden ser (30) (45) (60)  ')
+
+            print("asigne los valores correspondientes ")
+            print("responda con si o no a la pregunta que se le haga  ")
+            Hi=input('tiene el valor de la hipotenusa?=')
+            if Hi == 'no':
+                ab=input('tiene el valor del cateto a y b = ')
+                if ab == 'si':
+                    a=int(input('cual es el valor del cateto a = '))
+                    b=int(input('cual es el valor del cateto b = '))
+                    Hi=(a**2)+(b**2)
+                    Hi=Hi**0.5
+                    print('el valor de la hipotenusa es = ' + str(Hi))
+                    document["div6"] <= html.P(F"el valor de la hipotenusa es  = {Hi}")
+                else:
+                    alfa=input('tiene el valor del angulo A = ')
+                    if alfa == 'si':
+                        alfa=int(input('cual es el valor del angulo A = '))
+                        beta = 180-(90+alfa)
+                        print('el valor del angulo B es =' + str(beta))
+                        document["div6"] <= html.P(F"el valor del angulo B es = {beta}")
+                        co=input('tiene el valor del cateto a = ')
+                        if co == 'si':
+                            co=int(input('cual es el valor del cateto a = '))
+                            if alfa == 30:
+                                H=1**0.5
+                                H=H/2
+                                H=co/H
+                                print('el valor de la hipotenusa es = ' + str(H))
+                                document["div6"] <= html.P(F"el valor de la hipotenusa es  = {H}")
+                                Ca=input('necesita hallar el cateto adyacente = ')
+                                if Ca == 'si':
+                                    if alfa == 60:
+                                        Ca=H*1/2
+                                        print('el cateto abyacente es =' + str(Ca))
+                                        document["div6"] <= html.P(F"el cateto abyacente es = {Ca}")
+                                    elif alfa == 45:
+                                        Ca=2**0.5
+                                        Ca=Ca/2
+                                        Ca=Ca*H
+                                        print('el cateto abyacente es =' + str(Ca))
+                                        document["div6"] <= html.P(F"el cateto abyacente es = {Ca}")
+                                    elif alfa == 30:
+                                        Ca=3**0.5
+                                        Ca=Ca/2
+                                        Ca=Ca*H
+                                        print('el cateto abyacente es =' + str(Ca))
+                                        document["div6"] <= html.P(F"el cateto abyacente es = {Ca}")
+                                    
+                            elif alfa == 45:
+                                H=2**0.5
+                                H=H/2
+                                H=co/H
+                                print('el valor de la hipotenusa es = ' + str(H))
+                                document["div6"] <= html.P(F"el valor de la hipotenusa es  = {H}")
+                                Ca=input('necesita hallar el cateto adyacente = ')
+                                if Ca == 'si':
+                                    if alfa == 60:
+                                        Ca=H*1/2
+                                        print('el cateto abyacente es =' + str(Ca))
+                                        document["div6"] <= html.P(F"el cateto abyacente es = {Ca}")
+                                    elif alfa == 45:
+
+                                        Ca=2**0.5
+                                        Ca=Ca/2
+                                        Ca=Ca*H
+                                        print('el cateto abyacente es =' + str(Ca))
+                                        document["div6"] <= html.P(F"el cateto abyacente es = {Ca}")
+                                    elif alfa == 30:
+                                        Ca=3**0.5
+                                        Ca=Ca/2
+                                        Ca=Ca*H
+                                        print('el cateto abyacente es =' + str(Ca))
+                                        document["div6"] <= html.P(F"el cateto abyacente es = {Ca}")
+                            elif alfa == 60:
+                                H=3**0.5
+                                H=H/2
+                                H=co/H
+                                print('el valor de la hipotenusa es = ' + str(H))
+                                document["div6"] <= html.P(F"el valor de la hipotenusa es  = {H}")
+                                Ca=input('necesita hallar el cateto adyacente = ')
+                                if Ca == 'si':
+                                    if alfa == 60:
+                                        Ca=H*1/2
+                                        print('el cateto abyacente es =' + str(Ca))
+                                        document["div6"] <= html.P(F"el cateto abyacente es = {Ca}")
+                                    elif alfa == 45:
+
+                                        Ca=2**0.5
+                                        Ca=Ca/2
+                                        Ca=Ca*H
+                                        print('el cateto abyacente es =' + str(Ca))
+                                        document["div6"] <= html.P(F"el cateto abyacente es = {Ca}")
+                                    elif alfa == 30:
+                                        Ca=3**0.5
+                                        Ca=Ca/2
+                                        Ca=Ca*H
+                        else:
+                            if co == 'no':
+                                ca=int(input('cual es el valor del cateto b = '))
+                                if alfa == 30:
+                                    H=1**0.5
+                                    H=H/2
+                                    H=ca/H
+                                    print('el valor de la hipotenusa es = ' + str(H))
+                                    document["div6"] <= html.P(F"el valor de la hipotenusa es  = {H}")
+                                    Co=input('necesita hallar el cateto opuesto = ')
+                                    if Co == 'si':
+                                        if alfa == 60:
+                                            Co=H*1/2
+                                            print('el cateto opuesto es =' + str(Co))
+                                            document["div6"] <= html.P(F"el cateto opuesto es = {Co}")
+                                        elif alfa == 45:
+
+                                            Co=2**0.5
+                                            Co=Ca/2
+                                            Co=Co*H
+                                            print('el cateto opuesto es =' + str(Co))
+                                            document["div6"] <= html.P(F"el cateto opuesto es = {Co}")
+                                        elif alfa == 30:
+                                            Co=3**0.5
+                                            Co=Co/2
+                                            Co=Co*H
+                                            print('el cateto opuesto es =' + str(Co))
+                                            document["div6"] <= html.P(F"el cateto opuesto es = {Co}")
+                                        
+                                elif alfa == 45:
+                                    H=2**0.5
+                                    H=H/2
+                                    H=ca/H
+                                    print('el valor de la hipotenusa es = ' + str(H))
+                                    document["div6"] <= html.P(F"el valor de la hipotenusa es  = {H}")
+                                    Co=input('necesita hallar el cateto opuesto = ')
+                                    if Co == 'si':
+                                        if alfa == 60:
+                                            Co=H*1/2
+                                            print('el cateto opuesto es =' + str(Co))
+                                            document["div6"] <= html.P(F"el cateto opuesto es = {Co}")
+                                        elif alfa == 45:
+
+                                            Co=2**0.5
+                                            Co=Co/2
+                                            Co=Co*H
+                                            print('el cateto opuesto es =' + str(Co))
+                                            document["div6"] <= html.P(F"el cateto opuesto es = {Co}")
+                                        elif alfa == 30:
+                                            Co=3**0.5
+                                            Co=Co/2
+                                            Co=Co*H
+                                            print('el cateto opuesto es =' + str(Co))
+                                            document["div6"] <= html.P(F"el cateto opuesto es = {Co}")
+                                elif alfa == 60:
+                                    H=3**0.5
+                                    H=H/2
+                                    H=ca/H
+                                    print('el valor de la hipotenusa es = ' + str(H))
+                                    document["div6"] <= html.P(F"el valor de la hipotenusa es  = {H}")
+                                    Co=input('necesita hallar el cateto opuesto = ')
+                                    if Co == 'si':
+                                        if alfa == 60:
+                                            Co=H*1/2
+                                            print('el cateto opuesto es =' + str(Co))
+                                            document["div6"] <= html.P(F"el cateto opuesto es = {Co}")
+                                        elif alfa == 45:
+
+                                            Co=2**0.5
+                                            Co=Co/2
+                                            Co=Co*H
+                                            print('el cateto opuesto es =' + str(Co))
+                                            document["div6"] <= html.P(F"el cateto opuesto es = {Co}")
+                                        elif alfa == 30:
+                                            Co=3**0.5
+                                            Co=Ca/2
+                                            Co=Co*H
+                                            print('el cateto opuesto es =' + str(Co))
+                                            document["div6"] <= html.P(F"el cateto opuesto es = {Co}")
+
+                    else:
+                        if alfa == 'no':
+                            beta=int(input('cual es el valor del angulo B = '))
+                            alfa = 180-(90+beta)
+                        print('el valor del angulo A es =' + str(alfa))
+                        document["div6"] <= html.P(F"el valor del angulo A es = {alfa}")
+                        co=input('tiene el valor del cateto b = ')
+                        if co == 'si':
+                            co=int(input('cual es el valor del cateto b = '))
+                            if beta == 30:
+                                H=1**0.5
+                                H=H/2
+                                H=co/H
+                                print('el valor de la hipotenusa es = ' + str(H))
+                                document["div6"] <= html.P(F"el valor de la hipotenusa es  = {H}")
+                                Ca=input('necesita hallar el cateto adyacente = ')
+                                if Ca == 'si':
+                                    if beta == 60:
+                                        Ca=H*1/2
+                                        print('el cateto abyacente es =' + str(Ca))
+                                        document["div6"] <= html.P(F"el cateto abyacente es = {Ca}")
+                                    elif beta == 45:
+
+                                        Ca=2**0.5
+                                        Ca=Ca/2
+                                        Ca=Ca*H
+                                        print('el cateto abyacente es =' + str(Ca))
+                                        document["div6"] <= html.P(F"el cateto abyacente es = {Ca}")
+                                    elif beta == 30:
+                                        Ca=3**0.5
+                                        Ca=Ca/2
+                                        Ca=Ca*H
+                                        print('el cateto abyacente es =' + str(Ca))
+                                        document["div6"] <= html.P(F"el cateto abyacente es = {Ca}")
+                                    
+                            elif beta == 45:
+                                H=2**0.5
+                                H=H/2
+                                H=co/H
+                                print('el valor de la hipotenusa es = ' + str(H))
+                                document["div6"] <= html.P(F"el valor de la hipotenusa es  = {H}")
+                                Ca=input('necesita hallar el cateto adyacente = ')
+                                if Ca == 'si':
+                                    if beta == 60:
+                                        Ca=H*1/2
+                                        print('el cateto abyacente es =' + str(Ca))
+                                        document["div6"] <= html.P(F"el cateto abyacente es = {Ca}")
+                                    elif beta == 45:
+
+                                        Ca=2**0.5
+                                        Ca=Ca/2
+                                        Ca=Ca*H
+                                        print('el cateto abyacente es =' + str(Ca))
+                                        document["div6"] <= html.P(F"el cateto abyacente es = {Ca}")
+                                    elif beta == 30:
+                                        Ca=3**0.5
+                                        Ca=Ca/2
+                                        Ca=Ca*H
+                                        print('el cateto abyacente es =' + str(Ca))
+                                        document["div6"] <= html.P(F"el cateto abyacente es = {Ca}")
+                            elif beta == 60:
+                                H=3**0.5
+                                H=H/2
+                                H=co/H
+                                print('el valor de la hipotenusa es = ' + str(H))
+                                document["div6"] <= html.P(F"el valor de la hipotenusa es  = {H}")
+                                Ca=input('necesita hallar el cateto adyacente = ')
+                                if Ca == 'si':
+                                    if beta == 60:
+                                        Ca=H*1/2
+                                        print('el cateto abyacente es =' + str(Ca))
+                                        document["div6"] <= html.P(F"el cateto abyacente es = {Ca}")
+                                    elif beta == 45:
+
+                                        Ca=2**0.5
+                                        Ca=Ca/2
+                                        Ca=Ca*H
+                                        print('el cateto abyacente es =' + str(Ca))
+                                        document["div6"] <= html.P(F"el cateto abyacente es = {Ca}")
+                                    elif beta == 30:
+                                        Ca=3**0.5
+                                        Ca=Ca/2
+                                        Ca=Ca*H
+                                        print('el cateto abyacente es =' + str(Ca))
+                                        document["div6"] <= html.P(F"el cateto abyacente es = {Ca}")
+                        else:
+                            if co== 'no':
+                                co=int(input('cual es el valor del cateto a = '))
+                                if beta == 30:
+                                    H=1**0.5
+                                    H=H/2
+                                    H=co/H
+                                    print('el valor de la hipotenusa es = ' + str(H))
+                                    document["div6"] <= html.P(F"el valor de la hipotenusa es  = {H}")
+                                    Ca=input('necesita hallar el cateto opuesto = ')
+                                    if Ca == 'si':
+                                        if beta == 60:
+                                            Ca=H*1/2
+                                            print('el cateto opuesto es =' + str(Ca))
+                                            document["div6"] <= html.P(F"el cateto opuesto es = {Ca}")
+                                        elif beta == 45:
+
+                                            Ca=2**0.5
+                                            Ca=Ca/2
+                                            Ca=Ca*H
+                                            print('el cateto opuesto es =' + str(Ca))
+                                            document["div6"] <= html.P(F"el cateto opuesto es = {Ca}")
+                                        elif beta == 30:
+                                            Ca=3**0.5
+                                            Ca=Ca/2
+                                            Ca=Ca*H
+                                            print('el cateto opuesto es =' + str(Ca))
+                                            document["div6"] <= html.P(F"el cateto opuesto es = {Ca}")
+                                        
+                                elif beta == 45:
+                                    H=2**0.5
+                                    H=H/2
+                                    H=co/H
+                                    print('el valor de la hipotenusa es = ' + str(H))
+                                    document["div6"] <= html.P(F"el valor de la hipotenusa es  = {H}")
+                                    Ca=input('necesita hallar el cateto opuesto = ')
+                                    if Ca == 'si':
+                                        if beta == 60:
+                                            Ca=H*1/2
+                                            print('el cateto opuesto es =' + str(Ca))
+                                            document["div6"] <= html.P(F"el cateto opuesto es = {Ca}")
+                                        elif beta == 45:
+
+                                            Ca=2**0.5
+                                            Ca=Ca/2
+                                            Ca=Ca*H
+                                            print('el cateto opuesto es =' + str(Ca))
+                                            document["div6"] <= html.P(F"el cateto opuesto es = {Ca}")
+                                        elif beta == 30:
+                                            Ca=3**0.5
+                                            Ca=Ca/2
+                                            Ca=Ca*H
+                                            print('el cateto opuesto es =' + str(Ca))
+                                            document["div6"] <= html.P(F"el cateto opuesto es = {Ca}")
+                                elif beta == 60:
+                                    H=3**0.5
+                                    H=H/2
+                                    H=co/H
+                                    print('el valor de la hipotenusa es = ' + str(H))
+                                    document["div6"] <= html.P(F"el valor de la hipotenusa es  = {H}")
+                                    Ca=input('necesita hallar el cateto opuesto = ')
+                                    if Ca == 'si':
+                                        if beta == 60:
+                                            Ca=H*1/2
+                                            print('el cateto opuesto es =' + str(Ca))
+                                            document["div6"] <= html.P(F"el cateto opuesto es = {Ca}")
+                                        elif beta == 45:
+
+                                            Ca=2**0.5
+                                            Ca=Ca/2
+                                            Ca=Ca*H
+                                            print('el cateto opuesto es =' + str(Ca))
+                                            document["div6"] <= html.P(F"el cateto opuesto es = {Ca}")
+                                        elif beta == 30:
+                                            Ca=3**0.5
+                                            Ca=Ca/2
+                                            Ca=Ca*H
+                                            print('el cateto opuesto es =' + str(Ca))
+                                            document["div6"] <= html.P(F"el cateto opuesto es = {Ca}")
+
+            elif Hi == 'si':
+
+                H=int(input('valor de la hipotenusa = '))
+                alfa=input('tiene al angulo A =')
+                if alfa == 'si':
+                    alfa=int(input('valor del angulo A= '))
+                    beta=180-(90+alfa)
+                    print('el angulo B es = ' + str(beta))
+                    document["div6"] <= html.P(F"el valor del angulo B es = {beta}")
+                    Co=input('necesita hallar el cateto opuesto=')
+                    if Co == 'si':
+                        if alfa == 30:
+                            Co=H*1/2
+                            print('el cateto opuesto es =' + str(Co))
+                            document["div6"] <= html.P(F"el cateto opuesto es = {Co}")
+                            Ca=input('necesita hallar el cateto adyacente= ')
+                            if Ca == 'si':
+
+                                if alfa == 60:
+                                    Ca=H*1/2
+                                    print('el cateto abyacente es =' + str(Ca))
+                                    document["div6"] <= html.P(F"el cateto abyacente es = {Ca}")
+                                elif alfa == 45:
+                                    Ca=2**0.5
+                                    Ca=Ca/2
+                                    Ca=Ca*H
+                                    print('el cateto abyacente es =' + str(Ca))
+                                    document["div6"] <= html.P(F"el cateto abyacente es = {Ca}")
+                                elif alfa == 30:
+                                    Ca=3**0.5
+                                    Ca=Ca/2
+                                    Ca=Ca*H
+                                    print('el cateto abyacente es =' + str(Ca))
+                                    document["div6"] <= html.P(F"el cateto abyacente es = {Ca}")
+                        elif alfa == 45:
+                            Co=2**0.5
+                            Co=Co/2
+                            Co=Co*H
+                            print('el cateto opuesto es =' + str(Co))
+                            document["div6"] <= html.P(F"el cateto opuesto es = {Co}")
+                            Ca=input('necesita hallar el cateto abyacente= ')
+                            if Ca == 'si':
+
+                                if alfa == 60:
+                                    Ca=H*1/2
+                                    print('el cateto abyacente es =' + str(Ca))
+                                    document["div6"] <= html.P(F"el cateto abyacente es = {Ca}")
+                                elif alfa == 45:
+                                    Ca=2**0.5
+                                    Ca=Ca/2
+                                    Ca=Ca*H
+                                    print('el cateto abyacente es =' + str(Ca))
+                                    document["div6"] <= html.P(F"el cateto abyacente es = {Ca}")
+                                elif alfa == 30:
+                                    Ca=3**0.5
+                                    Ca=Ca/2
+                                    Ca=Ca*H
+                                    print('el cateto abyacente es =' + str(Ca))
+                                    document["div6"] <= html.P(F"el cateto abyacente es = {Ca}")
+                        elif alfa == 60:
+                            Co=3**0.5
+                            Co=Co/2
+                            Co=Co*H
+                            print('el cateto opuesto es =' + str(Co))
+                            document["div6"] <= html.P(F"el cateto opuesto es = {Co}")
+                            Ca=input('necesita hallar el cateto abyacente= ')
+                            if Ca == 'si':
+
+                                if alfa == 60:
+                                    Ca=H*1/2
+                                    print('el cateto abyacente es =' + str(Ca))
+                                    document["div6"] <= html.P(F"el cateto abyacente es = {Ca}")
+                                elif alfa == 45:
+                                    Ca=2**0.5
+                                    Ca=Ca/2
+                                    Ca=Ca*H
+                                    print('el cateto abyacente es =' + str(Ca))
+                                    document["div6"] <= html.P(F"el cateto abyacente es = {Ca}")
+                                elif alfa == 30:
+                                    Ca=3**0.5
+                                    Ca=Ca/2
+                                    Ca=Ca*H
+                                    print('el cateto abyacente es =' + str(Ca))
+                                    document["div6"] <= html.P(F"el cateto abyacente es = {Ca}")          
+                    else:
+                        Ca=input('necesita cateto adyacente=')
+                        if Ca == 'si':
+                            if alfa == 60:
+
+                                Ca=H*1/2
+                                print('el cateto abyacente es =' + str(Ca))
+                                document["div6"] <= html.P(F"el cateto abyacente es = {Ca}") 
+                            elif alfa == 45:
+                                    Ca=2**0.5
+                                    Ca=Ca/2
+                                    Ca=Ca*H
+                                    print('el cateto abyacente es =' + str(Ca))
+                                    document["div6"] <= html.P(F"el cateto abyacente es = {Ca}") 
+                            elif alfa == 30:
+                                    Ca=3**0.5
+                                    Ca=Ca/2
+                                    Ca=Ca*H
+                                    print('el cateto abyacente es =' + str(Ca))
+                                    document["div6"] <= html.P(F"el cateto abyacente es = {Ca}") 
+                else:
+                    if alfa == 'no':
+
+                        beta=int(input('valor de angulo B = '))
+                        alfa=180-(90+beta)
+                        document["div6"] <= html.P(F"el valor del angulo B es = {alfa}")
+                        Co=input('necesita hallar el cateto opuesto=')
+                        if Co == 'si':
+
+                            if beta == 30:
+
+                                Co=H*1/2
+                                print('el cateto opuesto es =' + str(Co))
+                                document["div6"] <= html.P(F"el cateto opuesto es = {Co}") 
+                                Ca=input('necesita hallar el cateto adyacente= ')
+                                if Ca == 'si':
+
+                                    if beta == 60:
+                                        Ca=H*1/2
+                                        print('el cateto abyacente es =' + str(Ca))
+                                        document["div6"] <= html.P(F"el cateto abyacente es = {Ca}") 
+                                    elif beta == 45:
+                                        Ca=2**0.5
+                                        Ca=Ca/2
+                                        Ca=Ca*H
+                                        print('el cateto abyacente es =' + str(Ca))
+                                        document["div6"] <= html.P(F"el cateto abyacente es = {Ca}") 
+                                    elif beta == 30:
+                                        Ca=3**0.5
+                                        Ca=Ca/2
+                                        Ca=Ca*H
+                                        print('el cateto abyacente es =' + str(Ca))
+                                        document["div6"] <= html.P(F"el cateto abyacente es = {Ca}")
+                                               
+                                else:
+                                    Ca=input('necesita cateto adyacente=')
+                                    if Ca == 'si':
+                                        if beta == 60:
+                                                Ca=H*1/2
+                                                print('el cateto abyacente es =' + str(Ca))
+                                                document["div6"] <= html.P(F"el cateto abyacente es = {Ca}")
+                                        elif beta == 45:
+                                            Ca=2**0.5
+                                            Ca=Ca/2
+                                            Ca=Ca*H
+                                            print('el cateto abyacente es =' + str(Ca))
+                                            document["div6"] <= html.P(F"el cateto abyacente es = {Ca}")
+                                        elif beta == 30:
+                                            Ca=3**0.5
+                                            Ca=Ca/2
+                                            Ca=Ca*H
+                                            print('el cateto abyacente es =' + str(Ca))
+                                            document["div6"] <= html.P(F"el cateto abyacente es = {Ca}")
+       
+        #document['triangulo'].bind('click', imagen)
+        document['inicio'].bind('click', lol)
+        
+        
+    </script>
+    <div id="fb-root"></div>
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v7.0"></script>
+    <div class="fb-like" data-href="http://127.0.0.1:5500/web.html#" data-width="" data-layout="standard" data-action="like" data-size="large" data-share="true"></div>
+    <h2>
+        Creadores: Nairo Guerrero - Kevin Jurado - Jhon Enao
+
+    </h2>
+</body>
+</html>
